@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     double ltHesap=0,fiyatHesap=0;
     String sonuc="";
 
-    TextView tv;
+    TextView tv,tvResult;
     EditText etMesafe;
     EditText etOrtTuk;
     EditText etLitreFiyat;
@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         tv = (TextView) findViewById(R.id.tv);
+        tvResult = (TextView) findViewById(R.id.tvResult);
 
         etMesafe = (EditText) findViewById(R.id.etMesafe);
         etOrtTuk = (EditText) findViewById(R.id.etOrtTuk);
@@ -46,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
                 sonuc="Yakılan tutar :" + fiyatHesap + "TL'dir.";
 
                 Toast.makeText(MainActivity.this, sonuc,Toast.LENGTH_LONG).show();
+                tvResult.setText(sonuc);
             }
         });
 
